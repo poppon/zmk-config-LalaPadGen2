@@ -85,8 +85,8 @@
             display-name = "Default";
             bindings = <
 &kp Q              &kp W      &kp E           &kp R             &kp T                                            &kp Y      &kp U             &kp I           &kp O           &kp P
-&kp A              &kp S      &kp D           &kp F             &kp G                                            &kp H      &kp J             &kp K           &kp L           &mt2 EQUAL MINUS
-&mt2 LEFT_SHIFT Z  &kp X      &kp C           &kp V             &kp B                                            &kp N      &kp M             &kp COMMA       &kp PERIOD      &kp SLASH
+&kp A              &kp S      &kp D           &kp F             &kp G                                            &kp H      &kp J             &kp K           &kp L           &kp LS(LBKT)
+&mt2 LEFT_SHIFT Z  &kp X      &kp C           &kp V             &kp B                                            &kp N      &kp M             &kp COMMA       &kp PERIOD      &kp LS(INTERNATIONAL_1)
 &kp LCTRL          &kp LWIN   &kp LEFT_SHIFT  &lt 2 LANGUAGE_2  &mt LEFT_ALT SPACE  &kp LEFT_GUI  &kp BACKSPACE  &kp ENTER  &lt 1 LANGUAGE_1  &kp LANGUAGE_2  &kp LANGUAGE_1  &kp BACKSLASH
                    &none      &kp RIGHT       &kp DOWN          &kp LEFT            &kp UP        &kp UP         &kp LEFT   &kp DOWN          &kp RIGHT       &none
 &mkp LCLK          &mkp RCLK  &mkp MCLK                                                                                                       &mkp LCLK       &mkp RCLK       &mkp MCLK
