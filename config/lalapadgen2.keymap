@@ -42,6 +42,18 @@
             #binding-cells = <0>;
             bindings = <&mo 1>, <&mo 2>;
         };
+
+        mt3: balanced {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&kp>, <&kp>;
+
+            label = "MT3";
+        };
     };
 
     combos {
@@ -53,7 +65,7 @@
         };
 
         COMBO_TAB {
-            bindings = <&mt LEFT_SHIFT TAB>;
+            bindings = <&mt3 LEFT_SHIFT TAB>;
             key-positions = <10 11>;
         };
 
@@ -122,7 +134,7 @@
             bindings = <
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4                  &kp AT         &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp CARET  &kp LS(INT_YEN)
 &trans        &trans        &trans          &trans        &trans                        &kp AMPERSAND  &kp RIGHT_BRACKET  &kp BACKSLASH         &kp SEMI   &kp SQT
-&trans        &trans        &trans          &trans        &trans                        &kp GRAVE      &kp RIGHT_BRACE    &kp PIPE              &kp EQUAL  &kp TILDE
+&trans        &trans        &trans          &trans        &trans                        &kp GRAVE      &kp RIGHT_BRACE    &kp PIPE              &kp EQUAL  &kp LS(EQUAL)
 &bt BT_CLR    &trans        &bt BT_CLR_ALL  &trans        &trans        &trans  &trans  &trans         &trans             &trans                &trans     &trans
               &trans        &trans          &trans        &trans        &trans  &trans  &trans         &trans             &trans                &trans
 &trans        &trans        &trans                                                                                        &trans                &trans     &trans
