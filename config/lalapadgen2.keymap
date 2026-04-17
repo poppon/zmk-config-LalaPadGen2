@@ -93,11 +93,6 @@
             key-positions = <8 9>;
         };
 
-        COMBO_ENT {
-            bindings = <&mt3 RIGHT_SHIFT ENTER>;
-            key-positions = <18 19>;
-        };
-
         COMBO_DEL {
             bindings = <&kp DELETE>;
             key-positions = <9 19>;
@@ -110,50 +105,28 @@
     };
 
     macros {
-        Bef_BT: Bef_BT {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&toggle_layer_off 0 &toggle_layer_off 1>,
-                <&macro_wait_time 200>;
-
-            label = "BEFOREBTCHANGE";
-        };
-
-        Aft_BT_Mac: Aft_BT_Mac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_wait_time 500>, <&toggle_layer_on 0>;
-
-            label = "AFT_BT_WIN";
-        };
-
-        Aft_BT_Win: Aft_BT_Win {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_wait_time 500>, <&toggle_layer_on 1>;
-
-            label = "NEW_MACRO";
-        };
-
         BT1_Mac: BT1_Mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&Bef_BT>,
+                <&toggle_layer_off 0 &toggle_layer_off 1>,
+                <&macro_wait_time 200>,
                 <&bt BT_SEL 0>,
-                <&Aft_BT_Mac>;
+                <&macro_wait_time 500>,
+                <&toggle_layer_on 0>;
 
-            label = "BT2_IPAD";
+            label = "BT1_MAC";
         };
 
         BT2_iPad: BT2_iPad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&Bef_BT>,
+                <&toggle_layer_off 0 &toggle_layer_off 1>,
+                <&macro_wait_time 200>,
                 <&bt BT_SEL 1>,
-                <&Aft_BT_Mac>;
+                <&macro_wait_time 500>,
+                <&toggle_layer_on 0>;
 
             label = "BT2_IPAD";
         };
@@ -162,9 +135,11 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&Bef_BT>,
+                <&toggle_layer_off 0 &toggle_layer_off 1>,
+                <&macro_wait_time 200>,
                 <&bt BT_SEL 2>,
-                <&Aft_BT_Win>;
+                <&macro_wait_time 500>,
+                <&toggle_layer_on 1>;
             label = "BT3_WIN_2IN1";
         };
 
@@ -172,20 +147,24 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&Bef_BT>,
+                <&toggle_layer_off 0 &toggle_layer_off 1>,
+                <&macro_wait_time 200>,
                 <&bt BT_SEL 3>,
-                <&Aft_BT_Mac>;
-            label = "BT4";
+                <&macro_wait_time 500>,
+                <&toggle_layer_on 0>;
+            label = "BT4_IPHONE";
         };
 
         BT5_Win_BXO: BT5_Win_BXO {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&Bef_BT>,
+                <&toggle_layer_off 0 &toggle_layer_off 1>,
+                <&macro_wait_time 200>,
                 <&bt BT_SEL 4>,
-                <&Aft_BT_Win>;
-            label = "BT5";
+                <&macro_wait_time 500>,
+                <&toggle_layer_on 1>;
+            label = "BT5_WIN_BXO";
         };
     };
 
@@ -196,7 +175,7 @@
             display-name = "mac_layer";
             bindings = <
 &kp Q                &kp W        &kp E          &kp R      &kp T                                                        &kp Y             &kp U         &kp I          &kp O       &kp P
-&kp A                &kp S        &kp D          &kp F      &kp G                                                        &kp H             &kp J         &kp K          &kp L       &kp LBKT
+&kp A                &kp S        &kp D          &kp F      &kp G                                                        &kp H             &kp J         &kp K          &kp L       &mt3 RIGHT_SHIFT LBKT
 &mt3 LEFT_CONTROL Z  &kp X        &kp C          &kp V      &kp B                                                        &kp N             &kp M         &kp COMMA      &kp PERIOD  &mt3 RIGHT_CONTROL LS(INTERNATIONAL_1)
 &trans               &trans       &trans         &mo 2      &mt LEFT_COMMAND LANGUAGE_2  &mt LEFT_ALT SPACE  &kp RETURN  &lt 3 LANGUAGE_1  &mo 2         &trans         &trans      &trans
                      &kp LG(TAB)  &kp LC(RIGHT)  &kp LG(M)  &kp LC(LEFT)                 &kp LC(LG(F))       &kp LC(UP)  &kp LC(LEFT)      &kp LC(DOWN)  &kp LC(RIGHT)  &none
