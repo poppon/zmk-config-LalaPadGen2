@@ -207,7 +207,7 @@
 &kp CARET         &kp LS(INT3)       &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp AT_SIGN                    &kp COLON          &kp MINUS          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
 &kp SQT           &kp SEMICOLON      &kp RIGHT_BRACKET  &kp BACKSLASH         &kp AMPERSAND                  &kp DOUBLE_QUOTES  &kp SLASH          &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
 &kp LS(EQUAL)     &kp EQUAL          &kp RIGHT_BRACE    &kp PIPE              &kp GRAVE                      &kp EXCLAMATION    &kp QUESTION       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
-&kp HASH          &kp PERCENT        &kp DOLLAR         &trans                &trans         &trans  &trans  &trans             &trans             &kp KP_NUMBER_0  &kp KP_COMMA     &kp KP_DOT
+&kp HASH          &kp PERCENT        &kp DOLLAR         &mo 4                 &trans         &trans  &trans  &trans             &mo 4              &kp KP_NUMBER_0  &kp KP_COMMA     &kp KP_DOT
                   &trans             &trans             &trans                &trans         &trans  &trans  &trans             &trans             &trans           &trans
 &trans            &trans             &trans                                                                                                        &trans           &trans           &trans
 &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &trans             &trans                &trans                         &kp LC(LG(LEFT))   &kp LC(LG(RIGHT))  &trans           &trans           &trans
