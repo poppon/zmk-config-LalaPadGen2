@@ -82,24 +82,9 @@
             key-positions = <10 11>;
         };
 
-        Percent {
-            bindings = <&kp PERCENT>;
-            key-positions = <26 25>;
-        };
-
-        Dollar {
-            bindings = <&kp DOLLAR>;
-            key-positions = <16 15>;
-        };
-
-        Hash {
-            bindings = <&kp HASH>;
-            key-positions = <5 6>;
-        };
-
         Yen {
             bindings = <&kp INT_YEN>;
-            key-positions = <9 19>;
+            key-positions = <4 14>;
         };
 
         COMBO_BS {
@@ -108,100 +93,148 @@
         };
 
         COMBO_ENT {
-            bindings = <&kp ENTER>;
+            bindings = <&mt3 RIGHT_SHIFT ENTER>;
             key-positions = <18 19>;
         };
 
-        Combo_WinQuit {
-            bindings = <&kp RG(L)>;
-            key-positions = <9 41>;
+        COMBO_DEL {
+            bindings = <&kp DELETE>;
+            key-positions = <9 19>;
         };
 
-        Combo_MacSleep {
-            bindings = <&kp LC(LA(Q))>;
-            key-positions = <0 30>;
+        COMBO_SYSTEM_LAYER {
+            bindings = <&mo 4>;
+            key-positions = <33 38>;
         };
     };
 
     macros {
-        BTchange_Win: BTchange_Win {
+        Bef_BT: BeforeBTchange {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
                 <&toggle_layer_off 0 &toggle_layer_off 1>,
-                <&macro_wait_time 200>,
-                <&bt BT_SEL 2>,
-                <&macro_wait_time 500>,
-                <&toggle_layer_on 1>;
+                <&macro_wait_time 200>;
 
-            label = "BTCHANGE_WIN";
+            label = "BEFOREBTCHANGE";
+        };
+
+        Aft_BT_Mac: Aft_BT_Win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_wait_time 500>, <&toggle_layer_on 0>;
+
+            label = "AFT_BT_WIN";
+        };
+
+        Aft_BT_Win: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&macro_wait_time 500>, <&toggle_layer_on 1>;
+
+            label = "NEW_MACRO";
+        };
+
+        BT1_Mac: BT2_iPad {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&Bef_BT &bt BT_SEL 0 &Aft_BT_Mac>;
+            label = "BT2_IPAD";
+        };
+
+        BT2_iPad: BT2_iPad {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&Bef_BT &bt BT_SEL 1 &Aft_BT_Mac>;
+            label = "BT2_IPAD";
+        };
+
+        BT3_Win_2in1: BT3_Win_2in1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&Bef_BT &bt BT_SEL 2 &Aft_BT_Win>;
+            label = "BT3_WIN_2IN1";
+        };
+
+        BT4_iPhone: BT4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&Bef_BT &bt BT_SEL 3 &Aft_BT_Mac>;
+            label = "BT4";
+        };
+
+        BT5_Win_BXO: BT5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&Bef_BT &bt BT_SEL 4 &Aft_BT_Win>;
+            label = "BT5";
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        DEFAULT_LAYER {
+        MAC_LAYER {
             display-name = "Default";
             bindings = <
-&kp Q                &kp W        &kp E          &kp R         &kp T                                                    &kp Y             &kp U            &kp I          &kp O       &kp P
-&kp A                &kp S        &kp D          &kp F         &kp G                                                    &kp H             &lt 3 J          &kp K          &lt 3 L     &mt RIGHT_SHIFT LBKT
-&mt3 LEFT_CONTROL Z  &kp X        &kp C          &kp V         &kp B                                                    &kp N             &kp M            &kp COMMA      &kp PERIOD  &mt3 RIGHT_CONTROL LS(INTERNATIONAL_1)
-&trans               &trans       &trans         &lt 3 DELETE  &mt LEFT_ALT LANGUAGE_2  &mt LEFT_GUI SPACE  &kp RETURN  &lt 4 LANGUAGE_1  &lt 2 BACKSPACE  &trans         &trans      &trans
-                     &kp LA(TAB)  &kp LA(RIGHT)  &kp LA(DOWN)  &kp LA(LEFT)             &kp LA(UP)          &kp LC(UP)  &kp LC(LEFT)      &kp LC(DOWN)     &kp LC(RIGHT)  &none
-&mkp LCLK            &mkp RCLK    &mkp MCLK                                                                                                                &mkp LCLK      &mkp RCLK   &mkp MCLK
-&mkp MB5             &mkp MB4     &kp LG(TAB)    &kp LG(D)     &trans                                                   &mkp MB5          &mkp MB4         &kp LG(TAB)    &kp LG(D)   &trans
+&kp Q                &kp W        &kp E          &kp R      &kp T                                                        &kp Y             &kp U         &kp I          &kp O       &kp P
+&kp A                &kp S        &kp D          &kp F      &kp G                                                        &kp H             &kp J         &kp K          &kp L       &kp LBKT
+&mt3 LEFT_CONTROL Z  &kp X        &kp C          &kp V      &kp B                                                        &kp N             &kp M         &kp COMMA      &kp PERIOD  &mt3 RIGHT_CONTROL LS(INTERNATIONAL_1)
+&trans               &trans       &trans         &mo 2      &mt LEFT_COMMAND LANGUAGE_2  &mt LEFT_ALT SPACE  &kp RETURN  &lt 3 LANGUAGE_1  &mo 2         &trans         &trans      &trans
+                     &kp LG(TAB)  &kp LC(RIGHT)  &kp LG(M)  &kp LC(LEFT)                 &kp LC(LG(F))       &kp LC(UP)  &kp LC(LEFT)      &kp LC(DOWN)  &kp LC(RIGHT)  &none
+&mkp LCLK            &mkp RCLK    &mkp MCLK                                                                                                              &mkp LCLK      &mkp RCLK   &mkp MCLK
+&mkp MB4             &mkp MB5     &kp LG(TAB)    &kp LG(D)  &trans                                                       &mkp MB4          &mkp MB5      &kp LG(TAB)    &kp LG(D)   &trans
             >;
         };
 
         WINDOWS_LAYER {
             display-name = "windows_layer";
             bindings = <
-&kp Q                &kp W        &kp E          &kp R         &kp T                                                    &kp Y             &kp U            &kp I          &kp O       &kp P
-&kp A                &kp S        &kp D          &kp F         &kp G                                                    &kp H             &lt 3 J          &kp K          &lt 3 L     &mt RIGHT_SHIFT LBKT
-&mt3 LEFT_CONTROL Z  &kp X        &kp C          &kp V         &kp B                                                    &kp N             &kp M            &kp COMMA      &kp PERIOD  &mt3 RIGHT_CONTROL LS(INTERNATIONAL_1)
-&trans               &trans       &trans         &lt 3 DELETE  &mt LEFT_ALT LANGUAGE_2  &mt LEFT_GUI SPACE  &kp RETURN  &lt 4 LANGUAGE_1  &lt 2 BACKSPACE  &trans         &trans      &trans
-                     &kp LA(TAB)  &kp LA(RIGHT)  &kp LA(DOWN)  &kp LA(LEFT)             &kp LA(UP)          &kp LC(UP)  &kp LC(LEFT)      &kp LC(DOWN)     &kp LC(RIGHT)  &none
-&mkp LCLK            &mkp RCLK    &mkp MCLK                                                                                                                &mkp LCLK      &mkp RCLK   &mkp MCLK
-&mkp MB5             &mkp MB4     &kp LG(TAB)    &kp LG(D)     &trans                                                   &mkp MB5          &mkp MB4         &kp LG(TAB)    &kp LG(D)   &trans
+&kp Q      &kp W         &kp E          &kp R         &kp T                                                 &kp Y             &kp U     &kp I        &kp O        &kp P
+&kp A      &kp S         &kp D          &kp F         &kp G                                                 &kp H             &kp J     &kp K        &kp L        &kp LBKT
+&kp Z      &kp X         &kp C          &kp V         &kp B                                                 &kp N             &kp M     &kp COMMA    &kp PERIOD   &kp LS(INTERNATIONAL_1)
+&trans     &trans        &trans         &mo 2         &mt LCTRL LANGUAGE_2  &mt LEFT_ALT SPACE  &kp RETURN  &lt 3 LANGUAGE_1  &mo 2     &trans       &trans       &trans
+           &kp LEFT_WIN  &kp LG(RIGHT)  &kp LG(DOWN)  &kp LG(LEFT)          &kp LG(UP)          &kp UP      &kp LEFT          &kp DOWN  &kp RIGHT    &kt LA(TAB)
+&mkp LCLK  &mkp RCLK     &mkp MCLK                                                                                                      &mkp LCLK    &mkp RCLK    &mkp MCLK
+&mkp MB4   &mkp MB5      &kp LG(TAB)    &kp LG(D)     &trans                                                &mkp MB4          &mkp MB5  &kp LG(TAB)  &kp LG(D)    &trans
             >;
         };
 
-        SECONDARY_LAYER {
+        NUM_SYMBOL_LAYER {
             display-name = "secondary_layer";
             bindings = <
-&kp ESCAPE        &kp F2             &kp F3   &kp F4   &kp F5                   &kp COLON          &kp MINUS          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
-&trans            &kp F6             &kp F7   &kp F8   &kp F9                   &kp DOUBLE_QUOTES  &kp SLASH          &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
-&trans            &kp F10            &kp F11  &kp F12  &kp F13                  &kp EXCLAMATION    &kp QUESTION       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
-&trans            &trans             &trans   &trans   &trans   &trans  &trans  &trans             &trans             &kp KP_NUMBER_0  &trans           &trans
-                  &trans             &trans   &trans   &trans   &trans  &trans  &trans             &trans             &trans           &trans
-&trans            &trans             &trans                                                                           &trans           &trans           &trans
-&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &trans   &trans   &trans                   &kp LC(LG(LEFT))   &kp LC(LG(RIGHT))  &trans           &trans           &trans
+&kp CARET         &kp LS(INT3)       &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp AT_SIGN                    &kp COLON          &kp MINUS          &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9
+&kp SQT           &kp SEMICOLON      &kp RIGHT_BRACKET  &kp BACKSLASH         &kp AMPERSAND                  &kp DOUBLE_QUOTES  &kp SLASH          &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6
+&kp LS(EQUAL)     &kp EQUAL          &kp RIGHT_BRACE    &kp PIPE              &kp GRAVE                      &kp EXCLAMATION    &kp QUESTION       &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3
+&kp HASH          &kp PERCENT        &kp DOLLAR         &trans                &trans         &trans  &trans  &trans             &trans             &kp KP_NUMBER_0  &kp KP_COMMA     &kp KP_DOT
+                  &trans             &trans             &trans                &trans         &trans  &trans  &trans             &trans             &trans           &trans
+&trans            &trans             &trans                                                                                                        &trans           &trans           &trans
+&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))  &trans             &trans                &trans                         &kp LC(LG(LEFT))   &kp LC(LG(RIGHT))  &trans           &trans           &trans
             >;
         };
 
-        TERTIARY_LAYER {
+        NAVIGATION_LAYER {
             display-name = "tertiary_layer";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4                  &kp AT         &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp CARET  &kp LS(INT_YEN)
-&trans        &trans        &trans          &trans        &trans                        &kp AMPERSAND  &kp RIGHT_BRACKET  &kp BACKSLASH         &kp SEMI   &kp SQT
-&trans        &trans        &trans          &trans        &trans                        &kp GRAVE      &kp RIGHT_BRACE    &kp PIPE              &kp EQUAL  &kp LS(EQUAL)
-&bt BT_CLR    &trans        &bt BT_CLR_ALL  &trans        &trans        &trans  &trans  &trans         &trans             &trans                &trans     &trans
-              &trans        &trans          &trans        &trans        &trans  &trans  &trans         &trans             &trans                &trans
-&trans        &trans        &trans                                                                                        &trans                &trans     &trans
-&trans        &trans        &trans          &trans        &trans                        &trans         &trans             &trans                &trans     &trans
+&trans      &trans  &trans          &trans  &trans                  &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans
+&trans      &trans  &trans          &trans  &trans                  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+&trans      &trans  &trans          &trans  &trans                  &trans     &trans    &trans    &trans     &trans
+&bt BT_CLR  &trans  &bt BT_CLR_ALL  &trans  &trans  &trans  &trans  &trans     &trans    &trans    &trans     &trans
+            &trans  &trans          &trans  &trans  &trans  &trans  &trans     &trans    &trans    &trans
+&trans      &trans  &trans                                                               &trans    &trans     &trans
+&trans      &trans  &trans          &trans  &trans                  &trans     &trans    &trans    &trans     &trans
             >;
         };
 
         SYSTEM_LAYER {
             bindings = <
-&kp LS(CAPSLOCK)  &trans  &trans  &trans  &trans                  &kp PG_UP  &kp HOME        &kp UP_ARROW    &kp END          &trans
-&trans            &trans  &trans  &trans  &trans                  &kp PG_DN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans
-&trans            &trans  &trans  &trans  &trans                  &trans     &trans          &trans          &trans           &trans
-&trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans          &trans          &trans           &trans
-                  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans          &trans          &trans
-&trans            &trans  &trans                                                             &trans          &trans           &trans
-&trans            &trans  &trans  &trans  &trans                  &trans     &trans          &trans          &trans           &trans
+&BT1_Mac   &BT2_iPad  &BT3_Win_2in1  &BT4_iPhone  &BT5_Win_BXO                  &bt BT_CLR  &trans  &kp F7   &kp F8   &kp F9
+&trans     &trans     &trans         &trans       &trans                        &trans      &trans  &kp F4   &kp F5   &kp F6
+&trans     &trans     &trans         &trans       &trans                        &trans      &trans  &trans   &kp F2   &kp F3
+&kp LG(L)  &trans     &kp LC(LG(Q))  &trans       &trans        &trans  &trans  &trans      &trans  &kp F10  &kp F11  &kp F12
+           &trans     &trans         &trans       &trans        &trans  &trans  &trans      &trans  &trans   &trans
+&trans     &trans     &trans                                                                        &trans   &trans   &trans
+&trans     &trans     &trans         &trans       &trans                        &trans      &trans  &trans   &trans   &trans
             >;
         };
     };
