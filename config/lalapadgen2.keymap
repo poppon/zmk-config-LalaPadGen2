@@ -150,7 +150,7 @@
 &trans               &trans       &trans         &lt 3 DELETE  &mt LEFT_ALT LANGUAGE_2  &mt LEFT_GUI SPACE  &kp RETURN  &lt 4 LANGUAGE_1  &lt 2 BACKSPACE  &trans         &trans      &trans
                      &kp LA(TAB)  &kp LA(RIGHT)  &kp LA(DOWN)  &kp LA(LEFT)             &kp LA(UP)          &kp LC(UP)  &kp LC(LEFT)      &kp LC(DOWN)     &kp LC(RIGHT)  &none
 &mkp LCLK            &mkp RCLK    &mkp MCLK                                                                                                                &mkp LCLK      &mkp RCLK   &mkp MCLK
-&mkp MB4             &mkp MB5     &kp LG(TAB)    &kp LG(D)     &trans                                                   &mkp MB4          &mkp MB5         &kp LG(TAB)    &kp LG(D)   &trans
+&mkp MB5             &mkp MB4     &kp LG(TAB)    &kp LG(D)     &trans                                                   &mkp MB5          &mkp MB4         &kp LG(TAB)    &kp LG(D)   &trans
             >;
         };
 
@@ -163,7 +163,7 @@
 &trans               &trans       &trans         &lt 3 DELETE  &mt LEFT_ALT LANGUAGE_2  &mt LEFT_GUI SPACE  &kp RETURN  &lt 4 LANGUAGE_1  &lt 2 BACKSPACE  &trans         &trans      &trans
                      &kp LA(TAB)  &kp LA(RIGHT)  &kp LA(DOWN)  &kp LA(LEFT)             &kp LA(UP)          &kp LC(UP)  &kp LC(LEFT)      &kp LC(DOWN)     &kp LC(RIGHT)  &none
 &mkp LCLK            &mkp RCLK    &mkp MCLK                                                                                                                &mkp LCLK      &mkp RCLK   &mkp MCLK
-&mkp MB4             &mkp MB5     &kp LG(TAB)    &kp LG(D)     &trans                                                   &mkp MB4          &mkp MB5         &kp LG(TAB)    &kp LG(D)   &trans
+&mkp MB5             &mkp MB4     &kp LG(TAB)    &kp LG(D)     &trans                                                   &mkp MB5          &mkp MB4         &kp LG(TAB)    &kp LG(D)   &trans
             >;
         };
 
