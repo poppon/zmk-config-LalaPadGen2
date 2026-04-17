@@ -140,6 +140,7 @@
                 <&bt BT_SEL 2>,
                 <&macro_wait_time 500>,
                 <&toggle_layer_on 1>;
+
             label = "BT3_WIN_2IN1";
         };
 
@@ -152,6 +153,7 @@
                 <&bt BT_SEL 3>,
                 <&macro_wait_time 500>,
                 <&toggle_layer_on 0>;
+
             label = "BT4_IPHONE";
         };
 
@@ -164,6 +166,7 @@
                 <&bt BT_SEL 4>,
                 <&macro_wait_time 500>,
                 <&toggle_layer_on 1>;
+
             label = "BT5_WIN_BXO";
         };
     };
@@ -213,13 +216,13 @@
         NAVIGATION_LAYER {
             display-name = "navigation_layer";
             bindings = <
-&trans      &trans  &trans          &trans  &trans                  &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans
-&trans      &trans  &trans          &trans  &trans                  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
-&trans      &trans  &trans          &trans  &trans                  &trans     &trans    &trans    &trans     &trans
-&bt BT_CLR  &trans  &bt BT_CLR_ALL  &trans  &trans  &trans  &trans  &trans     &trans    &trans    &trans     &trans
-            &trans  &trans          &trans  &trans  &trans  &trans  &trans     &trans    &trans    &trans
-&trans      &trans  &trans                                                               &trans    &trans     &trans
-&trans      &trans  &trans          &trans  &trans                  &trans     &trans    &trans    &trans     &trans
+&trans  &trans  &trans  &trans  &trans                  &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans
+&trans  &trans  &trans  &trans  &trans                  &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans                  &trans     &trans    &trans    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans    &trans    &trans     &trans
+        &trans  &trans  &trans  &trans  &trans  &trans  &trans     &trans    &trans    &trans
+&trans  &trans  &trans                                                       &trans    &trans     &trans
+&trans  &trans  &trans  &trans  &trans                  &trans     &trans    &trans    &trans     &trans
             >;
         };
 
