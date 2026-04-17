@@ -141,9 +141,7 @@
             #binding-cells = <0>;
             bindings =
                 <&Bef_BT>,
-                <&macro_press>,
                 <&bt BT_SEL 0>,
-                <&macro_press>,
                 <&Aft_BT_Mac>;
 
             label = "BT2_IPAD";
@@ -154,9 +152,7 @@
             #binding-cells = <0>;
             bindings =
                 <&Bef_BT>,
-                <&macro_press>,
                 <&bt BT_SEL 1>,
-                <&macro_press>,
                 <&Aft_BT_Mac>;
 
             label = "BT2_IPAD";
@@ -165,21 +161,30 @@
         BT3_Win_2in1: BT3_Win_2in1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&Bef_BT &bt BT_SEL 2 &Aft_BT_Win>;
+            bindings =
+                <&Bef_BT>,
+                <&bt BT_SEL 2>,
+                <&Aft_BT_Win>;
             label = "BT3_WIN_2IN1";
         };
 
         BT4_iPhone: BT4_iPhone {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&Bef_BT &bt BT_SEL 3 &Aft_BT_Mac>;
+            bindings =
+                <&Bef_BT>,
+                <&bt BT_SEL 3>,
+                <&Aft_BT_Mac>;
             label = "BT4";
         };
 
         BT5_Win_BXO: BT5_Win_BXO {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&Bef_BT &bt BT_SEL 4 &Aft_BT_Win>;
+            bindings =
+                <&Bef_BT>,
+                <&bt BT_SEL 4>,
+                <&Aft_BT_Win>;
             label = "BT5";
         };
     };
