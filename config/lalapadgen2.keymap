@@ -139,14 +139,24 @@
         BT1_Mac: BT1_Mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&Bef_BT &bt BT_SEL 0 &Aft_BT_Mac>;
+            bindings =
+                <&Bef_BT>,
+                <&macro_press>,
+                <&bt BT_SEL 0>,
+                <&macro_press>,
+                <&Aft_BT_Mac>;
+
             label = "BT2_IPAD";
         };
 
         BT2_iPad: BT2_iPad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&Bef_BT &bt BT_SEL 1 &Aft_BT_Mac>;
+            bindings =
+                <&Bef_BT &bt BT_SEL 1 &Aft_BT_Mac>,
+                <&macro_press>,
+                <&macro_press>;
+
             label = "BT2_IPAD";
         };
 
