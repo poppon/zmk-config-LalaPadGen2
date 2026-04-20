@@ -231,7 +231,7 @@
             bindings = <
 &BT1_Mac   &BT2_iPad  &BT3_Win_2in1  &BT4_iPhone  &BT5_Win_BXO                  &bt BT_CLR  &trans  &kp F7   &kp F8   &kp F9
 &trans     &trans     &trans         &trans       &trans                        &trans      &trans  &kp F4   &kp F5   &kp F6
-&trans     &trans     &trans         &trans       &trans                        &trans      &trans  &trans   &kp F2   &kp F3
+&zip_dyn_scale ZDS_XY ZDS_INC  &zip_dyn_scale ZDS_XY ZDS_DEC  &zip_dyn_scale ZDS_SC ZDS_INC  &zip_dyn_scale ZDS_SC ZDS_DEC  &zip_dyn_scale ZDS_ALL ZDS_RST                        &trans      &trans  &trans   &kp F2   &kp F3
 &kp LG(L)  &trans     &kp LG(LC(Q))  &trans       &trans        &trans  &trans  &trans      &trans  &kp F10  &kp F11  &kp F12
            &trans     &trans         &trans       &trans        &trans  &trans  &trans      &trans  &trans   &trans
 &trans     &trans     &trans                                                                        &trans   &trans   &trans
