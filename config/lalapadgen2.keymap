@@ -183,7 +183,7 @@
 &trans               &trans       &trans         &mo 2      &mt LEFT_COMMAND LANGUAGE_2  &mt LEFT_ALT SPACE  &kp RETURN  &lt 3 LANGUAGE_1  &mo 2         &trans         &trans      &trans
                      &kp LG(TAB)  &kp LC(RIGHT)  &kp LG(M)  &kp LC(LEFT)                 &kp LC(LG(F))       &kp LC(UP)  &kp LC(LEFT)      &kp LC(DOWN)  &kp LC(RIGHT)  &none
 &mkp LCLK            &mkp RCLK    &mkp MCLK                                                                                                              &mkp LCLK      &mkp RCLK   &mkp MCLK
-&mkp MB4             &mkp MB5     &kp LG(TAB)    &kp LG(D)  &trans                                                       &mkp MB4          &mkp MB5      &kp LG(TAB)    &kp LG(D)   &trans
+&mkp MB5             &mkp MB4     &kp LG(TAB)    &kp LG(D)  &trans                                                       &mkp MB5          &mkp MB4      &kp LG(TAB)    &kp LG(D)   &trans
             >;
         };
 
@@ -229,13 +229,13 @@
         SYSTEM_LAYER {
             display-name = "system_layer";
             bindings = <
-&BT1_Mac   &BT2_iPad  &BT3_Win_2in1  &BT4_iPhone  &BT5_Win_BXO                  &bt BT_CLR  &trans  &kp F7   &kp F8   &kp F9
-&trans     &trans     &trans         &trans       &trans                        &trans      &trans  &kp F4   &kp F5   &kp F6
-&zip_dyn_scale ZDS_XY ZDS_INC  &zip_dyn_scale ZDS_XY ZDS_DEC  &zip_dyn_scale ZDS_SC ZDS_INC  &zip_dyn_scale ZDS_SC ZDS_DEC  &zip_dyn_scale ZDS_ALL ZDS_RST                        &trans      &trans  &trans   &kp F2   &kp F3
-&kp LG(L)  &trans     &kp LG(LC(Q))  &trans       &trans        &trans  &trans  &trans      &trans  &kp F10  &kp F11  &kp F12
-           &trans     &trans         &trans       &trans        &trans  &trans  &trans      &trans  &trans   &trans
-&trans     &trans     &trans                                                                        &trans   &trans   &trans
-&trans     &trans     &trans         &trans       &trans                        &trans      &trans  &trans   &trans   &trans
+&BT1_Mac                       &BT2_iPad                      &BT3_Win_2in1                  &BT4_iPhone                    &BT5_Win_BXO                                    &bt BT_CLR        &trans  &kp F7   &kp F8   &kp F9
+&trans                         &trans                         &trans                         &trans                         &trans                                          &trans            &trans  &kp F4   &kp F5   &kp F6
+&zip_dyn_scale ZDS_XY ZDS_INC  &zip_dyn_scale ZDS_XY ZDS_DEC  &zip_dyn_scale ZDS_SC ZDS_INC  &zip_dyn_scale ZDS_SC ZDS_DEC  &zip_dyn_scale ZDS_ALL ZDS_RST                  &kp LS(CAPSLOCK)  &trans  &trans   &kp F2   &kp F3
+&kp LG(L)                      &trans                         &kp LG(LC(Q))                  &trans                         &trans                          &trans  &trans  &trans            &trans  &kp F10  &kp F11  &kp F12
+                               &trans                         &trans                         &trans                         &trans                          &trans  &trans  &trans            &trans  &trans   &trans
+&trans                         &trans                         &trans                                                                                                                                  &trans   &trans   &trans
+&trans                         &trans                         &trans                         &trans                         &trans                                          &trans            &trans  &trans   &trans   &trans
             >;
         };
     };
