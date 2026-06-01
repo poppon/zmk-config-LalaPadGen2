@@ -13,7 +13,7 @@
 
 // 2 - 50 ( x0.2 - x5.0 ))
 #define MAC_SC_SCALE   2   // 0.2x — これ以上下げられない
-#define WIN_SC_SCALE   20  // 2.0x - xxx
+#define WIN_SC_SCALE   50  // 2.0x - default 1.0
 
 &mt { quick-tap-ms = <200>; };
 
