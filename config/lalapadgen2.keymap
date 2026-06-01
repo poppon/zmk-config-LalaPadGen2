@@ -13,7 +13,8 @@
 
 // 2 - 50 ( x0.2 - x5.0 ))
 #define MAC_SC_SCALE   2   // 0.2x — これ以上下げられない
-#define WIN_SC_SCALE   50  // 2.0x - default 1.0
+#define WIN_SC_SCALE   50  // 5.0x - default 1.0
+// lalapadgen2.dtsiの SCROLL_SPEED と対応させる speed = xxx_SC_SCALE / SCROLL_SPEED
 
 &mt { quick-tap-ms = <200>; };
 
