@@ -27,8 +27,8 @@
 #define CURSOR_SPEED     5
 #define CURSOR_SPEED_LOW 15
 
-#define SCROLL_SPEED     24
-#define SCROLL_SPEED_LOW 80
+#define SCROLL_SPEED     60  // - default 12
+#define SCROLL_SPEED_LOW 200 // - default 40
 
 / {
     chosen {
