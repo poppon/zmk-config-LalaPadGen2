@@ -11,6 +11,10 @@
 #define NAVIGATION_LAYER 3
 #define SYSTEM_LAYER     4
 
+// 2 - 50 ( x0.2 - x5.0 ))
+#define MAC_SC_SCALE   2   // 0.2x — これ以上下げられない
+#define WIN_SC_SCALE   10  // 1.0x（デフォルト）
+
 &mt { quick-tap-ms = <200>; };
 
 &lt { quick-tap-ms = <200>; };
@@ -113,6 +117,7 @@
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 0>,
                 <&macro_wait_time 500>,
+                <&zip_dyn_scale_set MAC_SC_SCALE>,
                 <&toggle_layer_on 0>;
 
             label = "BT1_MAC";
@@ -126,6 +131,7 @@
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 1>,
                 <&macro_wait_time 500>,
+                <&zip_dyn_scale_set MAC_SC_SCALE>,
                 <&toggle_layer_on 0>;
 
             label = "BT2_IPAD";
@@ -139,6 +145,7 @@
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 2>,
                 <&macro_wait_time 500>,
+                <&zip_dyn_scale_set WIN_SC_SCALE>,
                 <&toggle_layer_on 1>;
 
             label = "BT3_WIN_2IN1";
@@ -152,6 +159,7 @@
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 3>,
                 <&macro_wait_time 500>,
+                <&zip_dyn_scale_set MAC_SC_SCALE>,
                 <&toggle_layer_on 0>;
 
             label = "BT4_IPHONE";
@@ -165,6 +173,7 @@
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 4>,
                 <&macro_wait_time 500>,
+                <&zip_dyn_scale_set WIN_SC_SCALE>,
                 <&toggle_layer_on 1>;
 
             label = "BT5_WIN_BXO";
