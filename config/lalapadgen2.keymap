@@ -12,8 +12,10 @@
 #define SYSTEM_LAYER     4
 
 // 2 - 50 ( x0.2 - x5.0 ))
+
 #define MAC_SC_SCALE   2   // 0.2x — これ以上下げられない
 #define WIN_SC_SCALE   50  // 5.0x - default 1.0
+
 // lalapadgen2.dtsiの SCROLL_SPEED と対応させる speed = xxx_SC_SCALE / SCROLL_SPEED
 
 &mt { quick-tap-ms = <200>; };
@@ -118,8 +120,7 @@
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 0>,
                 <&macro_wait_time 500>,
-                <&zip_dyn_scale_set ZDS_SC MAC_SC_SCALE>,
-                <&toggle_layer_on 0>;
+                <&zip_dyn_scale_set ZDS_SC MAC_SC_SCALE &toggle_layer_on 0>;
         };
 
         BT2_iPad: BT2_iPad {
@@ -130,8 +131,7 @@
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 1>,
                 <&macro_wait_time 500>,
-                <&zip_dyn_scale_set ZDS_SC MAC_SC_SCALE>,
-                <&toggle_layer_on 0>;
+                <&zip_dyn_scale_set ZDS_SC MAC_SC_SCALE &toggle_layer_on 0>;
         };
 
         BT3_Win_2in1: BT3_Win_2in1 {
@@ -142,8 +142,7 @@
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 2>,
                 <&macro_wait_time 500>,
-                <&zip_dyn_scale_set ZDS_SC WIN_SC_SCALE>,
-                <&toggle_layer_on 1>;
+                <&zip_dyn_scale_set ZDS_SC WIN_SC_SCALE &toggle_layer_on 1>;
         };
 
         BT4_iPhone: BT4_iPhone {
@@ -154,8 +153,7 @@
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 3>,
                 <&macro_wait_time 500>,
-                <&zip_dyn_scale_set ZDS_SC MAC_SC_SCALE>,
-                <&toggle_layer_on 0>;
+                <&zip_dyn_scale_set ZDS_SC MAC_SC_SCALE &toggle_layer_on 0>;
         };
 
         BT5_Win_BXO: BT5_Win_BXO {
@@ -166,8 +164,7 @@
                 <&macro_wait_time 200>,
                 <&bt BT_SEL 4>,
                 <&macro_wait_time 500>,
-                <&zip_dyn_scale_set ZDS_SC WIN_SC_SCALE>,
-                <&toggle_layer_on 1>;
+                <&zip_dyn_scale_set ZDS_SC WIN_SC_SCALE &toggle_layer_on 1>;
         };
     };
 
@@ -196,7 +193,7 @@
 &trans     &trans        &trans         &mo 2         &mt LCTRL LANGUAGE_2  &mt LEFT_ALT SPACE  &kp RETURN  &lt 3 LANGUAGE_1  &mo 2     &trans       &trans        &trans
            &kp LEFT_WIN  &kp LG(RIGHT)  &kp LG(DOWN)  &kp LG(LEFT)          &kp LG(UP)          &kp UP      &kp LEFT          &kp DOWN  &kp TAB      &kt LEFT_ALT
 &mkp LCLK  &mkp RCLK     &mkp MCLK                                                                                                      &mkp LCLK    &mkp RCLK     &mkp MCLK
-&mkp MB4   &mkp MB5      &kp LG(TAB)    &kp LG(D)     &trans                                                &mkp MB4          &mkp MB5  &kp LG(TAB)  &kp LG(D)     &trans
+&mkp MB5   &mkp MB4      &kp LG(TAB)    &kp LG(D)     &trans                                                &mkp MB5          &mkp MB4  &kp LG(TAB)  &kp LG(D)     &trans
             >;
         };
 
